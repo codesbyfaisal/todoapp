@@ -90,3 +90,19 @@ ul {
     cursor: pointer;
   }
 }
+
+.toast {
+  position: absolute;
+  top: 1rem;
+  right: -100%;
+  transition: 0.3s;
+  text-transform: capitalize;
+  padding: 1rem;
+  background-color: rgb(0, 96, 128);
+  color: white;
+  border-radius: 1rem;
+}
+
+.toast.show {
+  right: calc(0% + 1rem);
+}
