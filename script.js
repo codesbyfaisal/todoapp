@@ -1,6 +1,15 @@
 const app = document.getElementById("app");
 const userinput = document.getElementById("userinput");
+const toast = document.querySelector(".toast");
 const list = document.getElementById("list");
+
+const showToast = (message) => {
+  toast.innerHTML = message
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 1000);
+}
 
 const addTask = (e) => {
   e.preventDefault();
