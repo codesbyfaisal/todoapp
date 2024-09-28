@@ -73,6 +73,12 @@ ul {
     display: flex;
     justify-content: space-between;
     position: relative;
+    padding: 0.5rem 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eee;
+    }
   }
 
   & li::after {

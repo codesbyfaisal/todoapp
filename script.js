@@ -8,15 +8,18 @@ const showToast = (message) => {
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 1000);
+  }, 2000);
 }
 
 const addTask = (e) => {
   e.preventDefault();
 
-  if (userinput.value === '') {
+  if (userinput.value.trim() === '') {
+    userinput.value = '';
     return showToast('todo must not be empty')
   }
+
+  if (!list.children) console.log(list.children);
 
   const task = userinput.value;
   userinput.value = '';
@@ -28,6 +31,7 @@ const addTask = (e) => {
   li.appendChild(btn);
 
   list.appendChild(li);
+  showToast('task added');
 
   li.addEventListener('click', () => {
     li.classList.toggle('overline')
