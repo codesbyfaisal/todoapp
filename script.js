@@ -13,28 +13,38 @@ const showToast = (message) => {
 
 const addTask = (e) => {
   e.preventDefault();
+  const task = userinput.value.trim();
 
-  if (userinput.value.trim() === '') {
+  if (task === '') {
     userinput.value = '';
     return showToast('todo must not be empty')
   }
 
-  if (!list.children) console.log(list.children);
+  if (list.children[0]) {
+    for (let i = 0; i < list.children.length; i++) {
+      if (list.children[i].children[0].innerHTML === task) {
+        userinput.value = '';
+        return showToast('task already added')
+      }
+    }
+  }
 
-  const task = userinput.value;
   userinput.value = '';
 
   const li = document.createElement("li");
-  li.textContent = task;
+  const span = document.createElement("span");
+  span.textContent = task;
   const btn = document.createElement("button");
   btn.setAttribute('class', 'fa-solid fa-trash');
+  li.appendChild(span)
   li.appendChild(btn);
 
   list.appendChild(li);
   showToast('task added');
 
   li.addEventListener('click', () => {
-    li.classList.toggle('overline')
+    span.classList.toggle('overline')
+    showToast('task delete successfully')
   })
 
   btn.addEventListener("click", () => {
