@@ -106,3 +106,7 @@ ul {
 .toast.show {
   right: calc(0% + 1rem);
 }
+
+.overline {
+  text-decoration: line-through;
+}
