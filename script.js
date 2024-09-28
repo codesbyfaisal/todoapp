@@ -29,6 +29,10 @@ const addTask = (e) => {
 
   list.appendChild(li);
 
+  li.addEventListener('click', () => {
+    li.classList.toggle('overline')
+  })
+
   btn.addEventListener("click", () => {
     li.remove();
   });
