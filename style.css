@@ -22,7 +22,8 @@ body {
   display: grid;
   gap: 1rem;
   color: rgb(0, 96, 128);
-  min-width: 30rem;
+  width: 100vw;
+  max-width: 30rem;
 }
 
 h1 {
@@ -66,8 +67,7 @@ button[type="submit"] {
 ul {
   list-style: none;
   font-size: 1.3rem;
-  padding-left: 1.8rem;
-
+  
   & li {
     width: 100%;
     display: flex;
@@ -75,6 +75,8 @@ ul {
     position: relative;
     padding: 0.5rem 0;
     cursor: pointer;
+    padding-left: 1.8rem;
+    border-radius: 1rem;
 
     &:hover {
       background-color: #eee;
@@ -84,8 +86,9 @@ ul {
   & li::after {
     content: "";
     position: absolute;
-    left: -1.5rem;
-    top: 19%;
+    left: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
