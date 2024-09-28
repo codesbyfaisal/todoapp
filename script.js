@@ -28,6 +28,10 @@ const addTask = (e) => {
   li.appendChild(btn);
 
   list.appendChild(li);
+
+  btn.addEventListener("click", () => {
+    li.remove();
+  });
 };
 
 app.addEventListener("submit", addTask);
